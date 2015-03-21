@@ -65,3 +65,33 @@ comparaCharString xC yS = if  (filter(== xC)yS) == []
 
 subtrai :: [Int] -> [Int] -> [Int]
 subtrai x y = zipWith (-) x y
+
+-- FUNCOES DE ALTA ORDEM
+
+-- 1.Dada uma lista de numeros, calcular 2*n+1 para cada numero n contido na lista.
+
+listaCalculaN :: [Int] -> [Int]
+listaCalculaN x = map (+1)(map(*2)x)
+
+-- 2.Dadas duas listas X e Y de numeros inteiros, calcular 4*x+2*y+1 para cada par de numeros x e y pertencentes as listas. 
+
+calculaXYLista :: [Int] -> [Int] -> [Int]
+calculaXYLista x y
+	| (x == [] )= []
+	| (y == []) = []
+	| otherwise = map (1+) (zipWith (+) (map (4*) x) (map (2*) y))
+
+-- 3.Dada uma lista de strings, produzir outra lista com strings de 10 caracteres, 
+-- usando o seguinte esquema: strings de entrada com mais de 10 caracteres sao truncadas, 
+-- strings com ate 10 caracteres sao completadas com '.' ate ficarem com 10 caracteres.
+
+trancaEPreenche :: [Char] -> [Char]
+trancaEPreenche x = if length x >10
+	then x
+	else trancaEPreenche(x ++ ".")
+
+-- 4.Dada uma lista de idades, selecionar as que sao maiores que 20 e, 
+-- para cada uma, calcular o ano de nascimento correspondente (aproximado, considerando o ano atual).
+
+calculaIdade :: [Int] -> [Int]
+calculaIdade id = filter(<1996) (map (2015-) id)
