@@ -85,10 +85,14 @@ calculaXYLista x y
 -- usando o seguinte esquema: strings de entrada com mais de 10 caracteres sao truncadas, 
 -- strings com ate 10 caracteres sao completadas com '.' ate ficarem com 10 caracteres.
 
-trancaEPreenche :: [Char] -> [Char]
-trancaEPreenche x = if length x >10
-	then x
-	else trancaEPreenche(x ++ ".")
+trancaEPreenche :: String -> String
+trancaEPreenche x 
+	| length x >10 = trancaEPreenche (init x)
+	| length x <10 = trancaEPreenche(x ++ ".")
+	| otherwise = x
+
+mapeador :: [String] -> [String]
+mapeador x = map (trancaEPreenche)x
 
 -- 4.Dada uma lista de idades, selecionar as que sao maiores que 20 e, 
 -- para cada uma, calcular o ano de nascimento correspondente (aproximado, considerando o ano atual).
