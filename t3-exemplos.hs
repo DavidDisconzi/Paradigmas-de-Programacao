@@ -12,27 +12,27 @@ verif x cad = any(x==)cad
 -- b) 
 intervalo :: [Int] ->  Bool
 intervalo x = any(>0)x
--- Diz se há algum elemento maior que 0 em uma lista de inteiros
+-- Diz se ha algum elemento maior que 0 em uma lista de inteiros
 
 -- ALL
 --a)
 igual :: Int -> [Int] -> Bool
 igual y nums = all(y==)nums
--- Compara se o elemento y é igual a todos os elemento de all
+-- Compara se o elemento y e igual a todos os elemento de all
 
 --b) 
 func :: [Int] -> Bool
 func x= all(<0)x
--- Diz se há menores que 0
+-- Diz se ha menores que 0
 
--- 2.Em Haskell, o símbolo '$' pode ser usado para escrever códigos ainda mais curtos. 
+-- 2.Em Haskell, o simbolo '$' pode ser usado para escrever codigos ainda mais curtos. 
 -- Descubra seu significado e apresente 2 exemplos de uso.
 
 -- $
 --a)
 triplo :: [Int] -> [Int]
 tripo cad =(*3)  <$> cad
---Cada elemento da lista é triplicado
+--Cada elemento da lista e triplicado
 
 --b)
 exp :: int -> int -> int -> int
